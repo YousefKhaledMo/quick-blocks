@@ -1,6 +1,6 @@
-# Notion-like Slash Menu
+# Quick Blocks
 
-An Obsidian community plugin that opens a native slash command menu when you type `/` in the editor. Select a command to replace the slash query with common Markdown syntax.
+Quick Blocks is an Obsidian community plugin that opens a native slash menu when you type `/`. Use it to insert Markdown blocks, callouts, dates, custom snippets, attachments, and Obsidian commands without leaving the editor.
 
 ## Features
 

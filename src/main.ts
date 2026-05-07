@@ -1,10 +1,10 @@
 import {Plugin} from "obsidian";
-import {mergeSettings, NotionLikeSlashMenuSettings, SavedNotionLikeSlashMenuSettings} from "./settings";
+import {mergeSettings, QuickBlocksSettings, SavedQuickBlocksSettings} from "./settings";
 import {SlashMenuSettingTab} from "./settingsTab";
 import {SlashCommandSuggest} from "./slashSuggest";
 
-export default class NotionLikeSlashMenuPlugin extends Plugin {
-	settings: NotionLikeSlashMenuSettings;
+export default class QuickBlocksPlugin extends Plugin {
+	settings: QuickBlocksSettings;
 
 	async onload() {
 		await this.loadSettings();
@@ -17,7 +17,7 @@ export default class NotionLikeSlashMenuPlugin extends Plugin {
 	}
 
 	async loadSettings() {
-		this.settings = mergeSettings(await this.loadData() as SavedNotionLikeSlashMenuSettings | null);
+		this.settings = mergeSettings(await this.loadData() as SavedQuickBlocksSettings | null);
 	}
 
 	async saveSettings() {

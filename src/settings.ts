@@ -8,7 +8,7 @@ import {
 
 export const CURRENT_SETTINGS_VERSION = 2;
 
-export interface NotionLikeSlashMenuSettings {
+export interface QuickBlocksSettings {
 	schemaVersion: number;
 	triggerKeys: string;
 	triggerBehavior: TriggerBehavior;
@@ -20,7 +20,7 @@ export interface NotionLikeSlashMenuSettings {
 	commandUsageCounts: Record<string, number>;
 }
 
-export interface SavedNotionLikeSlashMenuSettings {
+export interface SavedQuickBlocksSettings {
 	schemaVersion?: number;
 	triggerKeys?: string;
 	triggerBehavior?: string;
@@ -32,7 +32,7 @@ export interface SavedNotionLikeSlashMenuSettings {
 	commandUsageCounts?: Record<string, number>;
 }
 
-export const DEFAULT_SETTINGS: NotionLikeSlashMenuSettings = {
+export const DEFAULT_SETTINGS: QuickBlocksSettings = {
 	schemaVersion: CURRENT_SETTINGS_VERSION,
 	triggerKeys: "/",
 	triggerBehavior: "anywhere",
@@ -44,7 +44,7 @@ export const DEFAULT_SETTINGS: NotionLikeSlashMenuSettings = {
 	commandUsageCounts: {},
 };
 
-export function mergeSettings(savedSettings: SavedNotionLikeSlashMenuSettings | null | undefined): NotionLikeSlashMenuSettings {
+export function mergeSettings(savedSettings: SavedQuickBlocksSettings | null | undefined): QuickBlocksSettings {
 	return {
 		schemaVersion: CURRENT_SETTINGS_VERSION,
 		triggerKeys: normalizeTriggerKeys(savedSettings?.triggerKeys),

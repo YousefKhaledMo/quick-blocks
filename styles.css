@@ -1,11 +1,11 @@
-.notion-like-slash-menu-item {
+.quick-blocks-menu-item {
 	align-items: flex-start;
 	display: flex;
 	gap: 8px;
 	min-height: 32px;
 }
 
-.notion-like-slash-menu-icon {
+.quick-blocks-menu-icon {
 	align-items: center;
 	color: var(--text-muted);
 	display: inline-flex;
@@ -15,24 +15,24 @@
 	width: 18px;
 }
 
-.notion-like-slash-menu-icon svg {
+.quick-blocks-menu-icon svg {
 	height: 16px;
 	width: 16px;
 }
 
-.notion-like-slash-menu-label {
+.quick-blocks-menu-label {
 	color: var(--text-normal);
 	line-height: 1.3;
 }
 
-.notion-like-slash-menu-text {
+.quick-blocks-menu-text {
 	display: flex;
 	flex-direction: column;
 	gap: 2px;
 	min-width: 0;
 }
 
-.notion-like-slash-menu-preview {
+.quick-blocks-menu-preview {
 	color: var(--text-muted);
 	font-size: var(--font-ui-smaller);
 	line-height: 1.2;

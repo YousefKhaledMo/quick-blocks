@@ -1,7 +1,7 @@
 {
-	"name": "notion-like-slash-menu",
+	"name": "quick-blocks",
 	"version": "1.0.0",
-	"description": "A Notion-like slash command menu for inserting common Markdown blocks in Obsidian.",
+	"description": "A slash menu for inserting Markdown blocks, custom snippets, attachments, dates, callouts, and Obsidian commands.",
 	"main": "main.js",
 	"type": "module",
 	"scripts": {

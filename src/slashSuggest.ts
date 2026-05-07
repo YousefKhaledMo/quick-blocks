@@ -10,7 +10,7 @@ import {
 	TFile,
 } from "obsidian";
 import {executeCommandPaletteCommand} from "./commandRegistry";
-import {NotionLikeSlashMenuSettings} from "./settings";
+import {QuickBlocksSettings} from "./settings";
 import {
 	getInsertedCursorOffset,
 	getSlashCommandDisplayText,
@@ -26,12 +26,12 @@ import {
 } from "./slashCommands";
 
 export class SlashCommandSuggest extends EditorSuggest<SlashMenuSuggestion> {
-	private getSettings: () => NotionLikeSlashMenuSettings;
+	private getSettings: () => QuickBlocksSettings;
 	private onSuggestionUsed: (commandId: string) => Promise<void>;
 
 	constructor(
 		app: App,
-		getSettings: () => NotionLikeSlashMenuSettings,
+		getSettings: () => QuickBlocksSettings,
 		onSuggestionUsed: (commandId: string) => Promise<void>,
 	) {
 		super(app);
@@ -77,15 +77,15 @@ export class SlashCommandSuggest extends EditorSuggest<SlashMenuSuggestion> {
 
 	renderSuggestion(command: SlashMenuSuggestion, el: HTMLElement): void {
 		el.empty();
-		const rowEl = el.createDiv({cls: "notion-like-slash-menu-item"});
-		const iconEl = rowEl.createSpan({cls: "notion-like-slash-menu-icon"});
+		const rowEl = el.createDiv({cls: "quick-blocks-menu-item"});
+		const iconEl = rowEl.createSpan({cls: "quick-blocks-menu-icon"});
 		const icon = command.type === "markdown" ? getSlashCommandIcon(command.id) : command.icon;
 		const label = command.type === "markdown" ? getSlashCommandDisplayText(command.id) : command.label;
 		setIcon(iconEl, icon);
-		const textEl = rowEl.createDiv({cls: "notion-like-slash-menu-text"});
-		textEl.createSpan({text: label, cls: "notion-like-slash-menu-label"});
+		const textEl = rowEl.createDiv({cls: "quick-blocks-menu-text"});
+		textEl.createSpan({text: label, cls: "quick-blocks-menu-label"});
 		if (this.getSettings().showDescriptions) {
-			textEl.createSpan({text: getSlashCommandPreviewText(command), cls: "notion-like-slash-menu-preview"});
+			textEl.createSpan({text: getSlashCommandPreviewText(command), cls: "quick-blocks-menu-preview"});
 		}
 	}
 

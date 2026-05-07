@@ -1,9 +1,9 @@
 {
-	"id": "notion-like-slash-menu",
-	"name": "Notion-like Slash Menu",
+	"id": "quick-blocks",
+	"name": "Quick Blocks",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "Insert common Markdown blocks from a clean slash command menu.",
-	"author": "",
+	"description": "Open a slash menu to insert Markdown blocks, custom snippets, attachments, dates, callouts, and Obsidian commands.",
+	"author": "YousefKhaledMo",
 	"isDesktopOnly": false
 }

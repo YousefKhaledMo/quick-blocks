@@ -1,12 +1,12 @@
 import {App, PluginSettingTab, Setting} from "obsidian";
 import {getCommandPaletteCommands} from "./commandRegistry";
-import NotionLikeSlashMenuPlugin from "./main";
+import QuickBlocksPlugin from "./main";
 import {getSlashCommandPreviewText, SLASH_COMMANDS, TriggerBehavior} from "./slashCommands";
 
 export class SlashMenuSettingTab extends PluginSettingTab {
-	plugin: NotionLikeSlashMenuPlugin;
+	plugin: QuickBlocksPlugin;
 
-	constructor(app: App, plugin: NotionLikeSlashMenuPlugin) {
+	constructor(app: App, plugin: QuickBlocksPlugin) {
 		super(app, plugin);
 		this.plugin = plugin;
 	}
