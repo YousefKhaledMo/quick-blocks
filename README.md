@@ -1,90 +1,94 @@
-# Obsidian Sample Plugin
+# Notion-like Slash Menu
 
-This is a sample plugin for Obsidian (https://obsidian.md).
+An Obsidian community plugin that opens a native slash command menu when you type `/` in the editor. Select a command to replace the slash query with common Markdown syntax.
 
-This project uses TypeScript to provide type checking and documentation.
-The repo depends on the latest plugin API (obsidian.d.ts) in TypeScript Definition format, which contains TSDoc comments describing what it does.
+## Features
 
-This sample plugin demonstrates some of the basic functionality the plugin API can do.
-- Adds a ribbon icon, which shows a Notice when clicked.
-- Adds a command "Open modal (simple)" which opens a Modal.
-- Adds a plugin setting tab to the settings page.
-- Registers a global click event and output 'click' to the console.
-- Registers a global interval which logs 'setInterval' to the console.
+- Native slash suggestions with icons, previews, favorites, and usage-based ranking
+- Configurable trigger keys and trigger behavior
+- Built-in Markdown, callout, date, time, property, and transform commands
+- Custom snippets with `${cursor}`, `${date}`, and `${time}` placeholders
+- Optional Obsidian command palette commands inside the slash menu
+- Local-only operation with no network calls or telemetry
 
-## First time developing plugins?
+## Commands
 
-Quick starting guide for new plugin devs:
+- Heading 1
+- Heading 2
+- Heading 3
+- Todo
+- Bullet list
+- Numbered list
+- Code block
+- Quote
+- Callout note
+- Callout warning
+- Table
+- Divider
+- Internal link
+- External link
+- Embed
+- Attachment
+- Math block
+- Today
+- Yesterday
+- Tomorrow
+- Current time
+- Tag
+- Frontmatter/properties
+- Footnote
+- Comment
+- Callout variants
+- Turn line into todo
+- Turn line into quote
 
-- Check if [someone already developed a plugin for what you want](https://obsidian.md/plugins)! There might be an existing plugin similar enough that you can partner up with.
-- Make a copy of this repo as a template with the "Use this template" button (login to GitHub if you don't see it).
-- Clone your repo to a local development folder. For convenience, you can place this folder in your `.obsidian/plugins/your-plugin-name` folder.
-- Install NodeJS, then run `npm i` in the command line under your repo folder.
-- Run `npm run dev` to compile your plugin from `main.ts` to `main.js`.
-- Make changes to `main.ts` (or create new `.ts` files). Those changes should be automatically compiled into `main.js`.
-- Reload Obsidian to load the new version of your plugin.
-- Enable plugin in settings window.
-- For updates to the Obsidian API run `npm update` in the command line under your repo folder.
+## Settings
 
-## Releasing new releases
+Open the plugin settings to:
 
-- Update your `manifest.json` with your new version number, such as `1.0.1`, and the minimum Obsidian version required for your latest release.
-- Update your `versions.json` file with `"new-plugin-version": "minimum-obsidian-version"` so older versions of Obsidian can download an older version of your plugin that's compatible.
-- Create new GitHub release using your new version number as the "Tag version". Use the exact version number, don't include a prefix `v`. See here for an example: https://github.com/obsidianmd/obsidian-sample-plugin/releases
-- Upload the files `manifest.json`, `main.js`, `styles.css` as binary attachments. Note: The manifest.json file must be in two places, first the root path of your repository and also in the release.
-- Publish the release.
+- Choose one or more trigger keys, separated by commas
+- Choose whether triggers work anywhere, at line start, or after whitespace
+- Enable or disable individual slash commands
+- Pin favorite commands near the top of the menu
+- Create custom snippets with aliases, icons, and placeholders
+- Add Obsidian command palette commands to the slash menu
+- Add aliases to command palette commands
 
-> You can simplify the version bump process by running `npm version patch`, `npm version minor` or `npm version major` after updating `minAppVersion` manually in `manifest.json`.
-> The command will bump version in `manifest.json` and `package.json`, and add the entry for the new version to `versions.json`
+## Custom snippets
 
-## Adding your plugin to the community plugin list
+Custom snippets are your own slash menu items. Fill the fields like this:
 
-- Check the [plugin guidelines](https://docs.obsidian.md/Plugins/Releasing/Plugin+guidelines).
-- Publish an initial version.
-- Make sure you have a `README.md` file in the root of your repo.
-- Make a pull request at https://github.com/obsidianmd/obsidian-releases to add your plugin.
+- **Name shown in the menu**: what you select, for example `Meeting note`
+- **Search words, optional**: extra words that find it, for example `meeting, notes`
+- **Text to insert**: what gets added to the note, for example `## ${cursor}`
+- **Icon name**: an Obsidian/Lucide icon name, for example `sparkles`
 
-## How to use
+Useful placeholders:
 
-- Clone this repo.
-- Make sure your NodeJS is at least v16 (`node --version`).
-- `npm i` or `yarn` to install dependencies.
-- `npm run dev` to start compilation in watch mode.
+- `${cursor}` puts the cursor there after inserting
+- `${date}` inserts today's date
+- `${time}` inserts the current time
 
-## Manually installing the plugin
+Example snippet:
 
-- Copy over `main.js`, `styles.css`, `manifest.json` to your vault `VaultFolder/.obsidian/plugins/your-plugin-id/`.
-
-## Improve code quality with eslint
-- [ESLint](https://eslint.org/) is a tool that analyzes your code to quickly find problems. You can run ESLint against your plugin to find common bugs and ways to improve your code. 
-- This project already has eslint preconfigured, you can invoke a check by running`npm run lint`
-- Together with a custom eslint [plugin](https://github.com/obsidianmd/eslint-plugin) for Obsidan specific code guidelines.
-- A GitHub action is preconfigured to automatically lint every commit on all branches.
-
-## Funding URL
-
-You can include funding URLs where people who use your plugin can financially support it.
-
-The simple way is to set the `fundingUrl` field to your link in your `manifest.json` file:
-
-```json
-{
-    "fundingUrl": "https://buymeacoffee.com"
-}
+```text
+Name: Meeting note
+Search words: meeting, notes
+Text to insert:
+## ${cursor}
+Date: ${date}
+Time: ${time}
 ```
 
-If you have multiple URLs, you can also do:
+After adding it, type `/meeting` in a note and select **Meeting note**.
 
-```json
-{
-    "fundingUrl": {
-        "Buy Me a Coffee": "https://buymeacoffee.com",
-        "GitHub Sponsor": "https://github.com/sponsors",
-        "Patreon": "https://www.patreon.com/"
-    }
-}
+## Development
+
+```bash
+npm install
+npm test
+npm run lint
+npm run build
 ```
 
-## API Documentation
-
-See https://docs.obsidian.md
+The production build writes `main.js` at the plugin root for Obsidian to load alongside `manifest.json` and `styles.css`.
