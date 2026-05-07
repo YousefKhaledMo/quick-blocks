@@ -1,7 +1,7 @@
 {
 	"name": "quick-blocks",
 	"version": "1.0.0",
-	"description": "A slash menu for inserting Markdown blocks, custom snippets, attachments, dates, callouts, and Obsidian commands.",
+	"description": "A slash menu for inserting Markdown blocks, custom snippets, attachments, dates, callouts, and editor commands.",
 	"main": "main.js",
 	"type": "module",
 	"scripts": {

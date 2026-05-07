@@ -3,7 +3,7 @@
 	"name": "Quick Blocks",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "Open a slash menu to insert Markdown blocks, custom snippets, attachments, dates, callouts, and Obsidian commands.",
+	"description": "Open a slash menu to insert Markdown blocks, custom snippets, attachments, dates, callouts, and editor commands.",
 	"author": "YousefKhaledMo",
 	"isDesktopOnly": false
 }

@@ -1,6 +1,6 @@
 # Quick Blocks
 
-Quick Blocks is an Obsidian community plugin that opens a native slash menu when you type `/`. Use it to insert Markdown blocks, callouts, dates, custom snippets, attachments, and Obsidian commands without leaving the editor.
+Quick Blocks opens a native slash menu when you type `/`. Use it to insert Markdown blocks, callouts, dates, custom snippets, attachments, and editor commands without leaving the editor.
 
 ## Features
 
@@ -8,7 +8,7 @@ Quick Blocks is an Obsidian community plugin that opens a native slash menu when
 - Configurable trigger keys and trigger behavior
 - Built-in Markdown, callout, date, time, property, and transform commands
 - Custom snippets with `${cursor}`, `${date}`, and `${time}` placeholders
-- Optional Obsidian command palette commands inside the slash menu
+- Optional command palette commands inside the slash menu
 - Local-only operation with no network calls or telemetry
 
 ## Commands
@@ -51,7 +51,7 @@ Open the plugin settings to:
 - Enable or disable individual slash commands
 - Pin favorite commands near the top of the menu
 - Create custom snippets with aliases, icons, and placeholders
-- Add Obsidian command palette commands to the slash menu
+- Add command palette commands to the slash menu
 - Add aliases to command palette commands
 
 ## Custom snippets
